@@ -1,16 +1,38 @@
-# finance_app
+# Parapilot
 
-A new Flutter project.
+## Proje Tanımı ve Amaçlar
 
-## Getting Started
+### Proje Tanımı
+Parapilot, kullanıcıların finansal okuryazarlıklarını artırmalarını sağlayacak, kişiselleştirilmiş finansal hedefler belirlemelerine ve bu hedeflere ulaşmalarına yardımcı olacak bir mobil uygulamadır.
 
-This project is a starting point for a Flutter application.
+### Amaçlar
+- Kullanıcıların finansal bilgilerini artırmak.
+- Kişiselleştirilmiş finansal hedefler oluşturmak.
+- Kullanıcıların harcamalarını ve birikimlerini takip etmelerine yardımcı olmak.
+- Yapay zeka ile kullanıcılara finansal tavsiyelerde bulunmak.
 
-A few resources to get you started if this is your first Flutter project:
+## Özellikler
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Kullanıcı Kaydı ve Profil Oluşturma
+- Kullanıcıların temel bilgilerini girebilecekleri bir kayıt ekranı.
+- Finansal durum ve hedeflerle ilgili bilgiler (gelir, gider, borçlar, tasarruf hedefleri).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Eğitim Modülü
+- Temel finansal okuryazarlık konularında eğitim materyalleri (videolar, makaleler).
+- İnteraktif quizler ve testler.
+
+### Finansal Hedefler
+- Kullanıcıların finansal hedefler belirleyebilecekleri bir arayüz.
+- Hedeflerin izlenmesi ve ilerleme durumu.
+
+### Bütçe Takibi
+- Gelir ve giderlerin kaydedilmesi.
+- Harcama kategorileri ve grafikleri.
+
+### Yapay Zeka Destekli Tavsiyeler
+- Kullanıcı verilerine dayalı olarak kişiselleştirilmiş finansal tavsiyeler.
+- Yapay zeka ile gelecekteki harcama ve tasarruf tahminleri.
+
+### Bildirimler ve Hatırlatmalar
+- Hedeflere ulaşmak için hatırlatıcılar.
+- Bütçe dışı harcamalar için uyarılar
