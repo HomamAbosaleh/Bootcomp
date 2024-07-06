@@ -24,8 +24,8 @@ class FinanceApp extends StatelessWidget {
         navigatorKey: StackedService.navigatorKey,
         onGenerateRoute: StackedRouter().onGenerateRoute,
         navigatorObservers: [StackedService.routeObserver],
-        debugShowCheckedModeBanner: true,
-        title: "Finance app",
+        debugShowCheckedModeBanner: false,
+        title: "Para Pilot",
       ),
     );
   }
