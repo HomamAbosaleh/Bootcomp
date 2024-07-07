@@ -3,7 +3,7 @@
 ## Takım Üyeleri
 1. Hasan Tekyıldırım
 2. Hüseyin Açan
-3. HomamAbosaleh
+3. Homam Abosaleh
 4. Gizem Efe
 5. Furkan Sarı
 
