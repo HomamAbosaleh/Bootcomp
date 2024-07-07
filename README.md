@@ -32,12 +32,21 @@ Proje boyunca tamamlanacak 3 sprint toplam puanı 500. 3 sprinte böldüğümüz
 
 ### Daily Scrum
 Daily scrum toplantıları hem WhatsApp hem de Discord üzerinden yapıldı.
+Örnek
+![4](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/3967d7c1-db8c-45e8-b177-ad60de702029)
+
 
 ### Sprint Ekran Görüntüsü
-![Sprint Ekran Görüntüsü](https://github.com/kullanici_adi/depo_adi/raw/main/sprint-screenshot.png) <!-- Bu kısmı sprint ekran görüntüsü dosya adıyla değiştirin -->
+![sprintfoto](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/3d9b64fd-90b6-43f8-a762-547f02122beb)
+
 
 ### Ürün Görüntüsü
-![Ürün Görüntüsü](https://github.com/kullanici_adi/depo_adi/raw/main/product-screenshot.png) <!-- Bu kısmı ürün görüntüsü dosya adıyla değiştirin -->
+![1urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/ae074c09-3494-4ff6-b7b4-31ac4e9cd0c2)
+![2urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/77984444-513b-4537-854f-799518980601)
+![3urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/5366c529-a86d-498b-8176-aa998a4730da)
+![4urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/38675b66-37ba-4730-a089-10855aa878f5)
+![5urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/358d71c2-4376-45fb-bff6-aa7c6a70e05c)
+![6urun](https://github.com/HomamAbosaleh/TAKIM16/assets/130930838/db745010-f2f7-4cd1-ba73-28097f62d35f)
 
 ## Sprint Review
 Sprint boyunca gerçekleştirdiğimiz adımlar şunlardır:
