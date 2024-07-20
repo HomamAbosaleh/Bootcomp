@@ -14,7 +14,6 @@ class SplashView extends StatelessWidget {
       builder: (context, viewModel, child) => Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        padding: const EdgeInsets.only(bottom: 127),
         clipBehavior: Clip.antiAlias,
         decoration: const BoxDecoration(
           gradient: LinearGradient(

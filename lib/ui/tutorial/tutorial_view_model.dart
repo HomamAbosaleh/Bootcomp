@@ -18,7 +18,7 @@ class TutorialViewModel extends AppBaseViewModel {
       if (selectedTab < 2) {
         selectedTab++;
       } else {
-        navigationService.navigateToAuthenicateView();
+        navigationService.navigateToLoginView();
       }
     } else {
       if (selectedTab > -1) {

@@ -5,29 +5,44 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:finance_app/ui/authenticate/authenticate_view.dart' as _i5;
-import 'package:finance_app/ui/home/home_view.dart' as _i4;
+import 'package:finance_app/core/models/topic.dart' as _i10;
+import 'package:finance_app/ui/authenticate/forget_password/forget_password_view.dart'
+    as _i7;
+import 'package:finance_app/ui/authenticate/login/login_view.dart' as _i5;
+import 'package:finance_app/ui/authenticate/signup/signup_view.dart' as _i6;
+import 'package:finance_app/ui/financial_dictionary/financial_dictionary_view.dart'
+    as _i8;
+import 'package:finance_app/ui/main/main_view.dart' as _i4;
 import 'package:finance_app/ui/splash/splash_view.dart' as _i2;
 import 'package:finance_app/ui/tutorial/tutorial_view.dart' as _i3;
-import 'package:flutter/material.dart' as _i6;
+import 'package:flutter/material.dart' as _i9;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i7;
+import 'package:stacked_services/stacked_services.dart' as _i11;
 
 class Routes {
   static const splashView = '/';
 
   static const tutorialView = '/tutorial-view';
 
-  static const homeView = '/home-view';
+  static const mainView = '/main-view';
 
-  static const authenicateView = '/authenicate-view';
+  static const loginView = '/login-view';
+
+  static const signupView = '/signup-view';
+
+  static const forgetPasswordView = '/forget-password-view';
+
+  static const financialDictionary = '/financial-dictionary';
 
   static const all = <String>{
     splashView,
     tutorialView,
-    homeView,
-    authenicateView,
+    mainView,
+    loginView,
+    signupView,
+    forgetPasswordView,
+    financialDictionary,
   };
 }
 
@@ -42,40 +57,69 @@ class StackedRouter extends _i1.RouterBase {
       page: _i3.TutorialView,
     ),
     _i1.RouteDef(
-      Routes.homeView,
-      page: _i4.HomeView,
+      Routes.mainView,
+      page: _i4.MainView,
     ),
     _i1.RouteDef(
-      Routes.authenicateView,
-      page: _i5.AuthenicateView,
+      Routes.loginView,
+      page: _i5.LoginView,
+    ),
+    _i1.RouteDef(
+      Routes.signupView,
+      page: _i6.SignupView,
+    ),
+    _i1.RouteDef(
+      Routes.forgetPasswordView,
+      page: _i7.ForgetPasswordView,
+    ),
+    _i1.RouteDef(
+      Routes.financialDictionary,
+      page: _i8.FinancialDictionary,
     ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.SplashView: (data) {
-      return _i6.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.SplashView(),
         settings: data,
       );
     },
     _i3.TutorialView: (data) {
-      return _i6.MaterialPageRoute<dynamic>(
+      return _i9.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.TutorialView(),
         settings: data,
       );
     },
-    _i4.HomeView: (data) {
-      return _i6.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i4.HomeView(),
+    _i4.MainView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i4.MainView(),
         settings: data,
       );
     },
-    _i5.AuthenicateView: (data) {
-      final args = data.getArgs<AuthenicateViewArguments>(
-        orElse: () => const AuthenicateViewArguments(),
+    _i5.LoginView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.LoginView(),
+        settings: data,
       );
-      return _i6.MaterialPageRoute<dynamic>(
-        builder: (context) => _i5.AuthenicateView(key: args.key),
+    },
+    _i6.SignupView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i6.SignupView(),
+        settings: data,
+      );
+    },
+    _i7.ForgetPasswordView: (data) {
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i7.ForgetPasswordView(),
+        settings: data,
+      );
+    },
+    _i8.FinancialDictionary: (data) {
+      final args = data.getArgs<FinancialDictionaryArguments>(nullOk: false);
+      return _i9.MaterialPageRoute<dynamic>(
+        builder: (context) => _i8.FinancialDictionary(
+            key: args.key, courseTitle: args.courseTitle, topics: args.topics),
         settings: data,
       );
     },
@@ -88,29 +132,39 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-class AuthenicateViewArguments {
-  const AuthenicateViewArguments({this.key});
+class FinancialDictionaryArguments {
+  const FinancialDictionaryArguments({
+    this.key,
+    required this.courseTitle,
+    required this.topics,
+  });
 
-  final _i6.Key? key;
+  final _i9.Key? key;
+
+  final String courseTitle;
+
+  final List<_i10.Topic> topics;
 
   @override
   String toString() {
-    return '{"key": "$key"}';
+    return '{"key": "$key", "courseTitle": "$courseTitle", "topics": "$topics"}';
   }
 
   @override
-  bool operator ==(covariant AuthenicateViewArguments other) {
+  bool operator ==(covariant FinancialDictionaryArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key;
+    return other.key == key &&
+        other.courseTitle == courseTitle &&
+        other.topics == topics;
   }
 
   @override
   int get hashCode {
-    return key.hashCode;
+    return key.hashCode ^ courseTitle.hashCode ^ topics.hashCode;
   }
 }
 
-extension NavigatorStateExtension on _i7.NavigationService {
+extension NavigatorStateExtension on _i11.NavigationService {
   Future<dynamic> navigateToSplashView([
     int? routerId,
     bool preventDuplicates = true,
@@ -139,30 +193,75 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToHomeView([
+  Future<dynamic> navigateToMainView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return navigateTo<dynamic>(Routes.homeView,
+    return navigateTo<dynamic>(Routes.mainView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToAuthenicateView({
-    _i6.Key? key,
+  Future<dynamic> navigateToLoginView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.loginView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToSignupView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.signupView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToForgetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.forgetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToFinancialDictionary({
+    _i9.Key? key,
+    required String courseTitle,
+    required List<_i10.Topic> topics,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.authenicateView,
-        arguments: AuthenicateViewArguments(key: key),
+    return navigateTo<dynamic>(Routes.financialDictionary,
+        arguments: FinancialDictionaryArguments(
+            key: key, courseTitle: courseTitle, topics: topics),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -197,30 +296,75 @@ extension NavigatorStateExtension on _i7.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeView([
+  Future<dynamic> replaceWithMainView([
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   ]) async {
-    return replaceWith<dynamic>(Routes.homeView,
+    return replaceWith<dynamic>(Routes.mainView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithAuthenicateView({
-    _i6.Key? key,
+  Future<dynamic> replaceWithLoginView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.loginView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSignupView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.signupView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithForgetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.forgetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithFinancialDictionary({
+    _i9.Key? key,
+    required String courseTitle,
+    required List<_i10.Topic> topics,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.authenicateView,
-        arguments: AuthenicateViewArguments(key: key),
+    return replaceWith<dynamic>(Routes.financialDictionary,
+        arguments: FinancialDictionaryArguments(
+            key: key, courseTitle: courseTitle, topics: topics),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

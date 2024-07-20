@@ -15,7 +15,6 @@ class TutorialView extends StatelessWidget {
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.only(bottom: 127),
           clipBehavior: Clip.antiAlias,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -180,7 +179,7 @@ Widget _generateLayout(String text, String image, BuildContext context) {
           decoration: TextDecoration.none,
         ),
       ),
-      SizedBox(height: MediaQuery.of(context).size.height / 20),
+      SizedBox(height: MediaQuery.of(context).size.height / 10),
       SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height / 2.5,

@@ -1,25 +1,25 @@
+import 'package:finance_app/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 
-import 'package:finance_app/ui/authenticate/authenticate_view_model.dart';
+import 'package:finance_app/ui/authenticate/login/login_view_model.dart';
 
-class AuthenicateView extends StatelessWidget {
-  final GlobalKey<FormState> formKey = GlobalKey();
-  final email = TextEditingController();
-  final password = TextEditingController();
+class LoginView extends StatelessWidget {
+  static final GlobalKey<FormState> formKey = GlobalKey();
+  static final email = TextEditingController();
+  static final password = TextEditingController();
 
-  AuthenicateView({super.key});
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
-      viewModelBuilder: () => AuthenicateViewModel(),
+      viewModelBuilder: () => LoginViewModel(),
       onViewModelReady: (model) => model.init(),
       builder: (context, viewModel, child) => Scaffold(
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.only(bottom: 127),
           clipBehavior: Clip.antiAlias,
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -30,8 +30,9 @@ class AuthenicateView extends StatelessWidget {
           ),
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+              padding: const EdgeInsets.fromLTRB(16, 20, 16, 40),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 2,
@@ -80,48 +81,56 @@ class AuthenicateView extends StatelessWidget {
                                 onPressed: () => {},
                                 icon: const Icon(Icons.electric_bolt_rounded)),
                           ),
-                        )
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                              onPressed: () => viewModel.navigationService
+                                  .navigateToForgetPasswordView(),
+                              child: const Text("Şifrenizi mi unuttunuz?"),
+                            ),
+                            TextButton(
+                              onPressed: () => viewModel.navigationService
+                                  .navigateToSignupView(),
+                              child: const Text("Hesabınız yok mu?"),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
-                  Row(
+                  Column(
                     children: [
-                      TextButton(
-                        onPressed: () => {},
-                        child: Text("Şifrenizi mi unuttunuz?"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: ElevatedButton(
+                          onPressed: () => {},
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Giriş Yap"),
+                              Icon(Icons.arrow_right_alt_outlined)
+                            ],
+                          ),
+                        ),
                       ),
-                      TextButton(
-                        onPressed: () => {},
-                        child: Text("Hesabınız yok mu?"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        child: ElevatedButton(
+                          onPressed: () =>
+                              viewModel.navigationService.navigateToMainView(),
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Misafir Olarak Devam Et"),
+                              Icon(Icons.arrow_right_alt_outlined)
+                            ],
+                          ),
+                        ),
                       ),
                     ],
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: ElevatedButton(
-                      onPressed: () => {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Giriş Yap"),
-                          Icon(Icons.arrow_right_alt_outlined)
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: ElevatedButton(
-                      onPressed: () => {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Misafir Olarak Devam Et"),
-                          Icon(Icons.arrow_right_alt_outlined)
-                        ],
-                      ),
-                    ),
-                  ),
+                  )
                 ],
               ),
             ),
