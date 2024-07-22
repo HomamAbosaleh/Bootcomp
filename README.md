@@ -101,6 +101,6 @@ Parapilot, kullanıcıların finansal okuryazarlıklarını artırmalarına yard
   #### Neler İyi Gitti
   - Aksaklıklara rağmen 2. sprint görevlerini bitirmeyi başardık.
 
-  #### Geliştirilebilecek Alanlar
+  ####  Gelecek Sprint İçin Öneriler
   - Projeyi istediğimiz şekilde bitirmemiz için 3. sprintte ekstra önem vermemiz ve ekipçe daha iyi planlama yapmamız gerekiyor.
 </details>
