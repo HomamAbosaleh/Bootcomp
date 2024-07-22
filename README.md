@@ -61,7 +61,7 @@ Parapilot, kullanıcıların finansal okuryazarlıklarını artırmalarına yard
   #### Neler İyi Gitti
   - **Ekip İletişimi**: Ekip üyeleri arasında güçlü bir iletişim kuruldu. Herkes fikirlerini açıkça paylaşabildi ve birlikte çalışmak verimliydi.
   - **Hedeflere Ulaşma**: Belirlediğimiz sprint hedeflerine başarıyla ulaştık. Planladığımız tüm görevleri zamanında tamamladık.
-
+### Sprint Notları
   #### Geliştirilebilecek Alanlar
   - **Zaman Yönetimi**: Zaman yönetimi konusunda daha dikkatli olmalıyız.
 
@@ -100,7 +100,7 @@ Parapilot, kullanıcıların finansal okuryazarlıklarını artırmalarına yard
   ### Sprint Retrospective
   #### Neler İyi Gitti
   - Aksaklıklara rağmen 2. sprint görevlerini bitirmeyi başardık.
-
+### Sprint Notları
   ####  Gelecek Sprint İçin Öneriler
   - Projeyi istediğimiz şekilde bitirmemiz için 3. sprintte ekstra önem vermemiz ve ekipçe daha iyi planlama yapmamız gerekiyor.
 </details>
