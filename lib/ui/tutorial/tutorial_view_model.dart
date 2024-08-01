@@ -3,12 +3,12 @@ import 'package:finance_app/app/app_base_view_model.dart';
 
 class TutorialViewModel extends AppBaseViewModel {
   final tabs = const [
-    Tab("assets/wallet.png",
-        "Uygulamamızda Cüzdan hareketlerinizi kontrol edebilir"),
-    Tab("assets/books.png",
-        "Finansal Okuryazarlığınızı geliştirmek için eğtimlere katlabilir"),
-    Tab("assets/robot.png",
-        "Finans haberlerini okuyabilir veya ParaP(Yapay zeka robotumuz) ile sohbet edebilirsiniz haberlerin özetini isteyebilirsiniz."),
+    Tab("assets/dictionary.png",
+        "Size yabancı gelen terimleri kolayca öğrenin ve finansal bilginizi genişletin."),
+    Tab("assets/news.png",
+        "Ekonomi ve iş dünyasındaki en son haberleri takip ederek güncel kalıp, haftalık olarak yayınlanacak özel içeriklerimizden yararlanarak finansal ufkunuzu genişletin."),
+    Tab("assets/finansbot.png",
+        "Finans hakkında konuşmak ve sorularınıza yanıt bulmak için Parap’ı kullanın."),
   ];
 
   int selectedTab = -1;

@@ -58,8 +58,7 @@ class TutorialView extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF2B47FC),
                     fontSize: 22,
-                    fontFamily: 'Montserrat Alternates',
-                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Montserrat-Regular',
                     decoration: TextDecoration.none,
                   ),
                 ),
@@ -111,8 +110,7 @@ class TutorialView extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFF2B47FC),
                     fontSize: 22,
-                    fontFamily: 'Montserrat Alternates',
-                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Montserrat-Regular',
                     decoration: TextDecoration.none,
                   ),
                 ),
@@ -126,42 +124,35 @@ class TutorialView extends StatelessWidget {
 }
 
 Widget _firstLayout() {
-  return const Column(
+  return Column(
     children: [
-      Text(
-        "Hoş Geldiniz",
+      const Text(
+        "Hoş Geldiniz!",
         style: TextStyle(
           color: Color(0xFF2B47FC),
           fontSize: 30,
-          fontFamily: 'Montserrat Alternates',
-          fontWeight: FontWeight.w400,
+          fontFamily: 'Montserrat',
           decoration: TextDecoration.none,
         ),
       ),
-      SizedBox(height: 20),
-      Text(
-        "ParaPilot Ekonomik okur yazarlığı arttırmak için geliştirilmekte olan bir uygulamadır",
+      const SizedBox(height: 20),
+      const Text(
+        "ParaPilot, finansal okuryazarlığı artırmak amacıyla geliştirilen bir uygulamadır. Gelin, burada neler yapabileceğinize birlikte göz atalım:",
         style: TextStyle(
           color: Color(0xFF2B47FC),
           fontSize: 19,
-          fontFamily: 'Montserrat Alternates',
-          fontWeight: FontWeight.w400,
+          fontFamily: 'Montserrat-Regular',
           decoration: TextDecoration.none,
         ),
         textAlign: TextAlign.justify,
       ),
-      SizedBox(height: 50),
-      Text(
-        "Gelin hep beraber burada neler neler yapabileceğimize bir bakalım",
-        style: TextStyle(
-          color: Color(0xFF2B47FC),
-          fontSize: 19,
-          fontFamily: 'Montserrat Alternates',
-          fontWeight: FontWeight.w400,
-          decoration: TextDecoration.none,
+      const SizedBox(height: 20),
+      SizedBox(
+        child: Image.asset(
+          "assets/welcome.png",
+          fit: BoxFit.fill,
         ),
-        textAlign: TextAlign.justify,
-      )
+      ),
     ],
   );
 }
@@ -171,11 +162,11 @@ Widget _generateLayout(String text, String image, BuildContext context) {
     children: [
       Text(
         text,
+        textAlign: TextAlign.center,
         style: const TextStyle(
           color: Color(0xFF2B47FC),
           fontSize: 24,
-          fontFamily: 'Montserrat Alternates',
-          fontWeight: FontWeight.w400,
+          fontFamily: 'Montserrat-Regular',
           decoration: TextDecoration.none,
         ),
       ),

@@ -1,11 +1,10 @@
-import 'package:finance_app/app/app.router.dart';
 import 'package:stacked/stacked.dart';
 import 'package:flutter/material.dart';
 
 import 'package:finance_app/ui/authenticate/forget_password/forget_password_view_model.dart';
 
 class ForgetPasswordView extends StatelessWidget {
-  static final GlobalKey<FormState> formKey = GlobalKey();
+  static final GlobalKey<FormState> formKey2 = GlobalKey();
   static final email = TextEditingController();
   static final password = TextEditingController();
 
@@ -33,55 +32,63 @@ class ForgetPasswordView extends StatelessWidget {
             backgroundColor: Colors.transparent,
           ),
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(16, 20, 16, 40),
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width / 2,
-                    child: Image.asset(
-                      "assets/logo.png",
-                      fit: BoxFit.fill,
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 20, 16, 40),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Image.asset(
+                        "assets/logo.png",
+                        fit: BoxFit.fill,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 200,
-                  ),
-                  Form(
-                    key: formKey,
-                    child: TextFormField(
-                      controller: email,
-                      decoration: const InputDecoration(
-                        label: Text(
-                          "E-Posta",
-                          style: TextStyle(
-                            color: Color.fromRGBO(120, 120, 120, 1),
+                    const SizedBox(
+                      height: 200,
+                    ),
+                    Form(
+                      key: formKey2,
+                      child: TextFormField(
+                        controller: email,
+                        decoration: const InputDecoration(
+                          label: Text(
+                            "E-Posta",
+                            style: TextStyle(
+                              color: Color.fromRGBO(66, 66, 66, 1),
+                              fontFamily: 'Montserrat-Regular',
+                            ),
                           ),
+                          hintStyle: TextStyle(
+                            color: Color.fromRGBO(66, 66, 66, 1),
+                            fontFamily: 'Montserrat-Regular',
+                          ),
+                          hintText: "E-Posta adresinizi giriniz",
+                          border: UnderlineInputBorder(),
+                          suffixIcon:
+                              Icon(Icons.mail, color: Color.fromRGBO(66, 66, 66, 1)),
                         ),
-                        hintStyle: TextStyle(
-                          color: Color.fromRGBO(120, 120, 120, 1),
-                        ),
-                        hintText: "E-Posta adresinizi giriniz",
-                        border: UnderlineInputBorder(),
-                        suffixIcon: Icon(Icons.mail, color: Color(0xFF69C7D0)),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: ElevatedButton(
-                      onPressed: () => {},
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Sıfırla"),
-                          Icon(Icons.arrow_right_alt_outlined)
-                        ],
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: ElevatedButton(
+                        onPressed: () => {},
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Sıfırla", style: TextStyle(
+                              fontFamily: 'Montserrat-Regular',
+                              color: Color.fromRGBO(66, 66, 66, 1),
+                            ),),
+                            Icon(Icons.arrow_right_alt_outlined)
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

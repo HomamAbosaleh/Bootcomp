@@ -1,3 +1,4 @@
+import 'package:finance_app/app/app.router.dart';
 import 'package:finance_app/ui/main/create_bottom_nav_item.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -16,14 +17,26 @@ class MainView extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           elevation: 0,
           type: BottomNavigationBarType.fixed,
+          selectedItemColor: const Color.fromRGBO(96, 125, 139, 1),
+          unselectedItemColor: const Color.fromRGBO(107, 107, 107, 1),
           items: [
             createNavItem(TabItem.Home),
             createNavItem(TabItem.Wallet),
+            createNavItem(TabItem.PilotGPT),
             createNavItem(TabItem.News),
-            createNavItem(TabItem.Profile),
+            viewModel.firebaseService.isAnonymousUser
+                ? createNavItem(TabItem.SignIn)
+                : createNavItem(TabItem.LogOut),
           ],
-          onTap: (value) {
-            viewModel.setTabIndex(value);
+          onTap: (value) async {
+            if (value == TabItem.SignIn.index) {
+              if (!viewModel.firebaseService.isAnonymousUser) {
+                await viewModel.firebaseService.signOut();
+              }
+              viewModel.navigationService.navigateToLoginView();
+            } else {
+              viewModel.setTabIndex(value);
+            }
           },
           currentIndex: viewModel.currentTabIndex,
         ),

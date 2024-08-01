@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "231912637776",
+    "project_id": "para-pilot-e7d52",
+    "storage_bucket": "para-pilot-e7d52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231912637776:android:ecfe62f9a191fc02c11855",
+        "android_client_info": {
+          "package_name": "com.example.finance_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvoROP8f6T_L5f5ce7OtTpO5N2xblnfP4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

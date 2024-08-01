@@ -4,6 +4,7 @@ import 'package:finance_app/app/app_base_view_model.dart';
 class MainViewModel extends AppBaseViewModel {
   int _currentTabIndex = 0;
   int get currentTabIndex => _currentTabIndex;
+  
 
 
   init() {}

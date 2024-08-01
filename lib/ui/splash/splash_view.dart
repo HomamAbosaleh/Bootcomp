@@ -22,9 +22,36 @@ class SplashView extends StatelessWidget {
             colors: [Color(0xFF94B9FF), Color(0xFFF4F1F1)],
           ),
         ),
-        child: Image.asset(
-          "assets/logo.png",
-          fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/logo.png",
+              fit: BoxFit.scaleDown,
+            ),
+            RichText(
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'PARA',
+                    style: TextStyle(
+                      color: Color.fromRGBO(43, 71, 252, 1),
+                      fontSize: 40,
+                      fontFamily: "Righteous",
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'PiLOT',
+                    style: TextStyle(
+                      color: Color.fromRGBO(3, 0, 166, 1),
+                      fontSize: 40,
+                      fontFamily: "Righteous",
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

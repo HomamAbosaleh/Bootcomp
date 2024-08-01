@@ -1,3 +1,6 @@
+import 'package:finance_app/ui/news/news.dart';
+import 'package:finance_app/ui/pilotgpt/pilotgpt_view.dart';
+import 'package:finance_app/ui/special_content/special_content_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:finance_app/ui/home/home_view.dart';
@@ -15,16 +18,24 @@ class TabItemData {
       icon: const Icon(Icons.home),
     ),
     TabItem.Wallet: TabItemData(
-      label: "Cüzdanım",
-      icon: const Icon(Icons.account_balance_wallet),
+      label: "Özel İçerik",
+      icon: const Icon(Icons.star),
+    ),
+    TabItem.PilotGPT: TabItemData(
+      label: "ParaP",
+      icon: const Icon(Icons.adb_outlined),
     ),
     TabItem.News: TabItemData(
       label: "Haberler",
       icon: const Icon(Icons.article),
     ),
-    TabItem.Profile: TabItemData(
-      label: "Hesabım",
-      icon: const Icon(Icons.person),
+    TabItem.SignIn: TabItemData(
+      label: "Giriş Yap",
+      icon: const Icon(Icons.login),
+    ),
+    TabItem.LogOut: TabItemData(
+      label: "Çıkış Yap",
+      icon: const Icon(Icons.logout),
     ),
   };
 }
@@ -38,18 +49,18 @@ BottomNavigationBarItem createNavItem(TabItem tabItem) {
 }
 
 // ignore: constant_identifier_names
-enum TabItem { Home, Wallet, News, Profile }
+enum TabItem { Home, Wallet, PilotGPT, News, SignIn, LogOut }
 
 Widget getViewForIndex(int index) {
   switch (index) {
     case 0:
       return const HomeView();
     case 1:
-      return const Text("Cüzdanım");
+      return const SpecialContent();
     case 2:
-      return const Text("Haberler");
+      return const PilotGPT();
     case 3:
-      return const Text("Profil");
+      return const NewsView();
     default:
       return Container();
   }

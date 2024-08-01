@@ -8,14 +8,14 @@
 5. Furkan Sarı
 
 ## Ürün İsmi
-**Parapilot**
+**finance_app**
 
 ## Backlog URL
 [Backlog URL]( https://trello.com/b/yyNR0ALo/1spri%CC%87nt)
 
 
 ## Ürün Açıklaması
-Parapilot, kullanıcıların finansal okuryazarlıklarını artırmalarına yardımcı olacak, kişiselleştirilmiş finansal hedefler belirlemelerini sağlayacak ve bu hedeflere ulaşmalarına yardımcı olacak bir mobil uygulamadır. Uygulama, kullanıcıların harcamalarını ve birikimlerini takip etmelerine yardımcı olurken, yapay zeka destekli finansal tavsiyeler sunar.
+finance_app, kullanıcıların finansal okuryazarlıklarını artırmalarına yardımcı olacak, kişiselleştirilmiş finansal hedefler belirlemelerini sağlayacak ve bu hedeflere ulaşmalarına yardımcı olacak bir mobil uygulamadır. Uygulama, kullanıcıların harcamalarını ve birikimlerini takip etmelerine yardımcı olurken, yapay zeka destekli finansal tavsiyeler sunar.
 
 ## Hedef Kitle
 - Kişisel finansal bilgilerini geliştirmek isteyen bireyler.
