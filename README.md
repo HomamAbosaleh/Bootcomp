@@ -38,6 +38,10 @@
 ## Ürün İsmi
 **ParaPilot**
 
+## Ürün Tanıtım Videosu
+https://github.com/user-attachments/assets/4e6502d1-4be0-4b47-80e0-115af6c4fedd
+
+
 ## Backlog URL
 [Backlog URL](https://trello.com/b/yyNR0ALo/1spri%CC%87nt)
 
